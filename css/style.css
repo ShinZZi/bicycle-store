@@ -9,12 +9,34 @@
     font-family: 'Poppins', sans-serif;
 }
 
+
 :root {
     --main: #191919;
     --white: #fff;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 html {
+    scroll-behavior: smooth;
     font-size: 62.5%; /* 1rem = 10px */
 }
 
@@ -67,9 +89,10 @@ header .header__nav .nav__links>li a {
 }
 
 section#main {
+    position: relative;
     grid-area: main;
-    padding-bottom: 4rem;
     padding: 0;
+    margin-bottom: 4rem;
 }
 
 section#main .main__head {
@@ -103,6 +126,54 @@ section#main .main__head .head__text {
     opacity: .85;
 }
 
+section#main .main__body {
+    display: grid;
+    grid-template-areas: 'product' 'about' 'contact';
+    grid-template-columns: 1fr;
+    grid-template-rows: 5rem 7rem 5rem;
+}
+
+.title {
+    font-size: 3.2rem;
+    font-weight: 400;
+}
+
+section#main .main__body .clearfix::before,
+section#main .main__body .clearfix::after {
+    content: '';
+    display: block;
+    width: 36%;
+    height: .2rem;
+    position: absolute;  
+}
+
+section#main .main__body .clearfix::before {
+    left: 15%;
+    bottom: 0;
+    background: linear-gradient(270deg, rgba(2,0,36,1) 0%, rgba(93,93,105,1) 70%, rgba(255,255,255,1) 95%);
+}
+
+section#main .main__body .clearfix::after {
+    right: 15%;
+    bottom: 0;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(93,93,105,1) 70%, rgba(255,255,255,1) 95%);
+}
+
+section#main .main__body .body__product {
+    grid-area: 'product';
+    position: relative;
+}
+
+section#main .main__body .body__about {
+    grid-area: 'about';
+    position: relative;
+}
+
+section#main .main__body .body__contact {
+    grid-area: 'contact';
+    position: relative;
+}
+
 
 footer {
     position: fixed;
@@ -116,8 +187,24 @@ footer {
     z-index: 99999;
 }
 
+footer a {
+    color: #fff;
+    margin: 0 .2rem;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.column.center {
+    justify-content: center;
+    align-items: center;
+}
+
 .row {
     display: flex;
+    flex-direction: row;
 }
 
 .row.center {
