@@ -66,6 +66,10 @@ header {
     font-size: 2rem;
 }
 
+header .header__logo {
+    cursor: pointer;
+}
+
 header .header__logo p {
     font-size: 4rem;
     font-weight: 600;
@@ -81,7 +85,12 @@ header .header__logo p span {
 
 header .header__nav .nav__links>li {
     font-weight: 500;
-    padding: 0 1rem;
+    padding: 0 2rem;
+    transition: all .2s ease;
+}
+
+header .header__nav .nav__links>li:hover {
+    transform: scale(1.2);
 }
 
 header .header__nav .nav__links>li a {
@@ -124,6 +133,41 @@ section#main .main__head .head__text {
     color: var(--white);
     z-index: 11;
     opacity: .85;
+}
+
+section#main .main__head .head__text .explore {
+    position: relative;
+    width: fit-content;
+    padding: .8rem;
+    font-size: 2rem;
+    border: .2rem var(--white) solid;
+    cursor: pointer;
+    z-index: 1;
+}
+
+section#main .main__head .head__text .explore:hover,
+section#main .main__head .head__text .explore:focus {
+    transition: color .65s ease-in-out;
+    color: var(--main);
+}
+
+section#main .main__head .head__text .explore::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--white);
+    transition: transform .35s ease-in-out;
+    transform: scaleX(0);
+    transform-origin: left;
+    z-index: -1;
+}
+
+section#main .main__head .head__text .explore:hover::before,
+section#main .main__head .head__text .explore:focus::before  {
+    transform: scaleX(1);
 }
 
 section#main .main__body {
