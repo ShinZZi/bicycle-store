@@ -185,7 +185,7 @@ section#main .main__body {
 
 section#main .main__body .body__product {
     grid-area: 'product';
-    margin-top: 5rem;
+    margin-top: 3rem;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -195,8 +195,8 @@ section#main .main__body .body__product .top {
     position: relative;
     display: flex;
     justify-content: center;
-    padding-bottom: 1.5rem;
-    margin-bottom: 3rem;
+    padding: 2rem 0;
+    margin-bottom: 4rem;
 }
 
 section#main .main__body .body__product .top .clearfix::before,
@@ -225,6 +225,11 @@ section#main .main__body .body__product .top .clearfix::after {
     font-weight: 400;
 }
 
+.title.black {
+    background: var(--main);
+    color: var(--white);
+    padding: 2rem 0;
+}
 
 section#main .main__body .body__product .product__items {
     padding: 0 5rem;
@@ -273,13 +278,23 @@ section#main .main__body .body__about {
     grid-area: 'about';
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
+    grid-template-rows: 1fr 100vh;
+    margin-bottom: 5rem;
 }
+
+
 section#main .main__body .body__contact {
     grid-area: 'contact';
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
+    grid-template-rows: 1fr 100vh;
+    margin-bottom: 5rem;
+}
+
+section#main .main__body .main__foot {
+    background: var(--main);
+    color: var(--white);
+    height: 30rem;
 }
 
 footer {
