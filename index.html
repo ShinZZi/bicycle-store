@@ -28,6 +28,13 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Customize CSS -->
     <link rel="stylesheet" href="./css/style.css">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            window.scrollTo(0, 0, 'smooth');
+        })
+    </script>
+
 </head>
 
 <body>
@@ -39,6 +46,10 @@
                 </a>
             </div>
             <div class="header__nav">
+                <div class="header__nav-menu">
+                    <i class="fas fa-bars"></i>
+                    <i class="fas fa-times"></i>
+                </div>
                 <ul class="nav__links row">
                     <li class="nav__link"><a href="#product">Product</a></li>
                     <li class="nav__link"><a href="#about">About</a></li>
@@ -50,8 +61,9 @@
 
         <section id="main">
             <!-- Banner Section start -->
+
             <div class="main__head">
-                <video class="head__video" src="./img/panel.MP4" muted loop autoplay></video>
+                <!-- <video class="head__video" src="./img/panel.MP4" muted loop autoplay></video> -->
                 <div class="head__overlay"></div>
                 <div class="head__text">
                     <h3>TOGETHER</h3>
@@ -59,10 +71,12 @@
                     <p class="explore"><a href="#">Explore more</a></p>
                 </div>
             </div>
+
             <!-- Banner Section end -->
 
             <div class="main__body">
                 <!-- Product Section start -->
+
                 <div id="product" class="body__product">
                     <div class="top">
                         <h1 class="title">Our Product</h1>
@@ -72,7 +86,7 @@
                         <div class="item">
                             <a href="#">
                                 <div class="product__img">
-                                    <img src="/img/38f8d.webp" alt="2018 Cannondale CAADX Tiagra"
+                                    <img src="./img/products/38f8d.webp" alt="2018 Cannondale CAADX Tiagra"
                                         title="2018 Cannondale CAADX Tiagra">
                                 </div>
                                 <div class="product__name">2018 Cannondale CAADX Tiagra</div>
@@ -81,7 +95,7 @@
                         <div class="item">
                             <a href="#">
                                 <div class="product__img">
-                                    <img src="/img/72251.webp" alt="2022 CUBE NUROAD C:62 PRO"
+                                    <img src="./img/products/72251.webp" alt="2022 CUBE NUROAD C:62 PRO"
                                         title="2022 CUBE NUROAD C:62 PRO">
                                 </div>
                                 <div class="product__name">2022 CUBE NUROAD C:62 PRO</div>
@@ -90,7 +104,8 @@
                         <div class="item">
                             <a href="#">
                                 <div class="product__img">
-                                    <img src="/img/7ce7f.webp" alt="2022 Alchemy Arktos | 150 - SRAM X01 Eagle"
+                                    <img src="./img/products/7ce7f.webp"
+                                        alt="2022 Alchemy Arktos | 150 - SRAM X01 Eagle"
                                         title="2022 Alchemy Arktos | 150 - SRAM X01 Eagle">
                                 </div>
                                 <div class="product__name">2022 Alchemy Arktos | 150 - SRAM X01 Eagle</div>
@@ -99,7 +114,7 @@
                         <div class="item">
                             <a href="#">
                                 <div class="product__img">
-                                    <img src="/img/b8fbe.webp" alt="2020 Alchemy Arktos 27.5 — X01 Eagle"
+                                    <img src="./img/products/b8fbe.webp" alt="2020 Alchemy Arktos 27.5 — X01 Eagle"
                                         title="2020 Alchemy Arktos 27.5 — X01 Eagle">
                                 </div>
                                 <div class="product__name">2020 Alchemy Arktos 27.5 — X01 Eagle</div>
@@ -108,7 +123,7 @@
                         <div class="item">
                             <a href="#">
                                 <div class="product__img">
-                                    <img src="/img/dc635.webp" alt="2022 Yeti 160E — C/Series / C1"
+                                    <img src="./img/products/dc635.webp" alt="2022 Yeti 160E — C/Series / C1"
                                         title="2022 Yeti 160E — C/Series / C1">
                                 </div>
                                 <div class="product__name">2022 Yeti 160E — C/Series / C1</div>
@@ -117,7 +132,7 @@
                         <div class="item">
                             <a href="#">
                                 <div class="product__img">
-                                    <img src="/img/23b24.webp" alt="2021 Specialized Tarmac SL7 Expert"
+                                    <img src="./img/products/23b24.webp" alt="2021 Specialized Tarmac SL7 Expert"
                                         title="2021 Specialized Tarmac SL7 Expert">
                                 </div>
                                 <div class="product__name">2021 Specialized Tarmac SL7 Expert</div>
@@ -125,19 +140,26 @@
                         </div>
                     </div>
                     <!-- Product Section end  -->
-
-                    <!-- About us Section start  -->
-                    <div id="about" class="body__about">
-                        <h1 class="title black row center">About Us</h1>
-                    </div>
-                    <!-- About us Section end  -->
-
-                    <!-- Contact Section start  -->
-                    <div id="contact" class="body__contact">
-                        <h1 class="title black row center">Contact</h1>
-                    </div>
-                    <!-- Contact Section end -->
                 </div>
+
+                <!-- Product Section end -->
+
+                <!-- About us Section start  -->
+
+                <div id="about" class="body__about">
+                    <h1 class="title black row center">About Us</h1>
+                </div>
+
+                <!-- About us Section end  -->
+
+                <!-- Contact Section start  -->
+
+                <div id="contact" class="body__contact">
+                    <h1 class="title black row center">Contact</h1>
+                </div>
+
+                <!-- Contact Section end -->
+
                 <div class="main__foot">
                     This is a static footer
                 </div>
@@ -155,6 +177,16 @@
             </p>
         </footer>
     </div>
+
+    <script src="./javascript/script.js"></script>
+    <script>
+        const heightt = document.querySelector('#contact');
+        console.log(heightt.scrollHeight);
+
+        document.addEventListener('', () => {
+            console.log(window.pageYOffset);
+        })
+    </script>
 </body>
 
 </html>
