@@ -1,16 +1,18 @@
-const menu_bars = document.querySelector('.fas.fa-bars');
-const menu_close = document.querySelector('.fas.fa-times');
-const nav_links = document.querySelector('.nav__links');
-console.log(menu_bars);
+const nav__menus = document.querySelector('.header__nav-menu');
+console.log(nav__menus);
 
-menu_bars.addEventListener('click', () => {
-    menu_bars.classList.remove('active');
-    menu_close.classList.add('active');
-    nav_links.classList.add('active');
-})
-
-menu_close.addEventListener('click', () => {
-    menu_bars.classList.add('active');
-    menu_close.classList.remove('active');
-    nav_links.classList.remove('active');
+nav__menus.addEventListener('click', () => {
+    let menus = nav__menus.querySelectorAll('i');
+    let nav__links = document.querySelector('.nav__links');
+    console.log(nav__links);
+    if (menus[0].classList.contains('active')) {
+        menus[1].classList.add('active');
+        nav__links.classList.add('active');
+        menus[0].classList.remove('active');
+    }
+    else {
+        menus[0].classList.add('active');
+        nav__links.classList.remove('active');
+        menus[1].classList.remove('active');
+    }
 })
