@@ -496,6 +496,15 @@ footer a {
 
 @media (max-width: 465px) {
 
+    #main,
+    #main .main__head,
+    #main .main__body,
+    #main .main__foot,
+    #main .main__body .body__product .product__items {
+        padding: 0;
+        width: 100%;
+    }
+
     #main .main__body .body__product .product__items .item {
         height: 100%;
         width: 33rem;
@@ -532,11 +541,11 @@ footer a {
 
     #main .main__body .body__product .product__items .item {
         height: 100%;
-        width: 33rem;
+        width: 29rem;
     }
 
     #main .main__body .body__product .product__items .item a {
-        grid-template-rows: 18rem auto;
+        grid-template-rows: 15rem auto;
     }
 
 }
