@@ -121,17 +121,16 @@ header .header__nav .nav__links>li:hover {
 #main {
     position: relative;
     grid-area: main;
-    padding: 0;
 }
 
 #main .main__head {
+    grid-area: banner;
     position: relative;
     height: calc(100vh - 11rem);
 }
 
 #main .main__head .head__video {
     height: calc(100vh - 11rem);
-    /* header and footer */
     width: 100%;
     object-fit: cover;
 }
@@ -142,7 +141,6 @@ header .header__nav .nav__links>li:hover {
     right: 0;
     width: 100%;
     height: calc(100vh - 11rem);
-    /* header and footer */
     background: rgba(0, 0, 0, 0.5);
     z-index: 5;
 }
@@ -326,7 +324,7 @@ header .header__nav .nav__links>li:hover {
     margin-bottom: 5rem;
 }
 
-#main .main__body .main__foot {
+#main .main__foot {
     background: var(--main);
     color: var(--white);
     height: 30rem;
@@ -387,8 +385,71 @@ footer a {
 
 /* media queries */
 
+@media (max-width: 375px) {
+    #main .main__body .body__product .product__items .item {
+        height: 100%;
+        width: 29rem !important;
+    }
+
+    #main .main__body .body__product .product__items .item a {
+        grid-template-rows: 15rem auto !important; 
+    }
+
+    #main .main__head .head__text {
+    }
+}
+
+@media (max-width: 465px) {
+
+    #main,
+    #main .main__head,
+    #main .main__body,
+    #main .main__foot,
+    #main .main__body .body__product .product__items {
+        padding: 0;
+        width: 100%;
+    }
+
+    #main .main__body .body__product .product__items .item {
+        height: 100%;
+        width: 33rem;
+    }
+
+    #main .main__body .body__product .product__items .item a {
+        grid-template-rows: 19rem auto;
+    }
+
+    #main .main__head .head__text {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 50%;
+        font-size: 5.5rem !important;
+    }
+
+}
+
 
 @media (max-width: 615px) {
+
+    header {
+        width: 100%;
+    }
+
+    header .header__logo p {
+        line-height: 7rem;
+        font-size: 3.5rem;
+    }
+
+    header .header__logo p span {
+        line-height: 7rem;
+        font-size: 2.5rem;
+    }
 
     header .header__nav .header__nav-menu {
         display: block;
@@ -433,7 +494,7 @@ footer a {
         -webkit-transition: transform .2s ease;
         -moz-transition: transform .2s ease;
         -o-transition: transform .2s ease;
-}
+    }
 
     header .header__nav .nav__links a {
         opacity: 0;
@@ -459,15 +520,22 @@ footer a {
         z-index: 99;
     }
 
+    #main,
+    #main .main__head,
+    #main .main__body,
+    #main .main__foot {
+        padding: 0;
+        width: 100%;
+    }
+
     #main .main__head .head__text {
         font-size: 6rem;
     }
 
     #main .main__head .head__text .explore {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 }
-
 
 
 @media (min-width: 1200px) {
