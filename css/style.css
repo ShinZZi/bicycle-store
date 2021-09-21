@@ -385,55 +385,11 @@ footer a {
 
 /* media queries */
 
-@media (max-width: 375px) {
-    #main .main__body .body__product .product__items .item {
-        height: 100%;
-        width: 29rem !important;
-    }
-
-    #main .main__body .body__product .product__items .item a {
-        grid-template-rows: 15rem auto !important; 
-    }
-
+@media (min-width: 1200px) {
     #main .main__head .head__text {
+        left: 7.5rem;
     }
 }
-
-@media (max-width: 465px) {
-
-    #main,
-    #main .main__head,
-    #main .main__body,
-    #main .main__foot,
-    #main .main__body .body__product .product__items {
-        padding: 0;
-        width: 100%;
-    }
-
-    #main .main__body .body__product .product__items .item {
-        height: 100%;
-        width: 33rem;
-    }
-
-    #main .main__body .body__product .product__items .item a {
-        grid-template-rows: 19rem auto;
-    }
-
-    #main .main__head .head__text {
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding-top: 50%;
-        font-size: 5.5rem !important;
-    }
-
-}
-
 
 @media (max-width: 615px) {
 
@@ -478,7 +434,8 @@ footer a {
         position: absolute;
         top: 0;
         right: 0;
-        width: 100vw;
+        left: 0;
+        /* width: 100vw; */
         text-align: center;
         margin-top: 7rem;
         background: var(--main);
@@ -537,9 +494,49 @@ footer a {
     }
 }
 
+@media (max-width: 465px) {
 
-@media (min-width: 1200px) {
-    #main .main__head .head__text {
-        left: 7.5rem;
+    #main .main__body .body__product .product__items .item {
+        height: 100%;
+        width: 33rem;
     }
+
+    #main .main__body .body__product .product__items .item a {
+        grid-template-rows: 18rem auto;
+    }
+
+    #main .main__head .head__text {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 50%;
+        font-size: 5.5rem;
+    }
+
+}
+
+@media (max-width: 375px) {
+
+    #main .main__head .head__text {
+        font-size: 5rem;
+    }
+
+    #main .main__body {
+        margin: 0;
+    }
+
+    #main .main__body .body__product .product__items .item {
+        height: 100%;
+        width: 33rem;
+    }
+
+    #main .main__body .body__product .product__items .item a {
+        grid-template-rows: 18rem auto;
+    }
+
 }
