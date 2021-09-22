@@ -327,8 +327,39 @@ header .header__nav .nav__links>li:hover {
 #main .main__foot {
     background: var(--main);
     color: var(--white);
-    height: 30rem;
+    height: 25rem;
+    padding: 2rem 10% 0 20%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
 }
+
+#main .main__foot .foot-title {
+    font-size: 1.5rem;
+    margin-bottom: .7rem;
+}
+
+#main .main__foot .foot-elements {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+}
+
+#main .main__foot .foot-elements a {
+    margin: .3rem 0;
+}
+
+/* #main .main__foot .foot__about {
+    background: brown;
+}
+
+#main .main__foot .foot__contact {
+    background: gray;
+}
+
+#main .main__foot .foot__social {
+    background: purple;
+} */
 
 footer {
     position: fixed;
@@ -381,13 +412,20 @@ footer a {
 
 
 
-
-
 /* media queries */
 
 @media (min-width: 1200px) {
     #main .main__head .head__text {
         left: 7.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #main .main__foot {
+        /* height: 25rem; */
+        padding: 2rem 10% 0 15%;
+        /* grid-template-columns: repeat(3, 1fr); */
+        /* grid-template-rows: 1fr; */
     }
 }
 
@@ -492,6 +530,28 @@ footer a {
     #main .main__head .head__text .explore {
         font-size: 1.8rem;
     }
+
+    #main .main__foot {
+        height: auto;
+        padding: 0;
+        grid-template-columns: 1fr;
+    }
+
+
+    #main .main__foot .foot__about,
+    #main .main__foot .foot__contact,
+    #main .main__foot .foot__social {
+        padding: 2% 5%;
+    }
+
+    #main .main__foot .foot-title {
+        font-size: 1.7rem;
+    }
+
+    #main .main__foot .foot-elements {
+        padding: auto;
+        font-size: 1.5rem;
+    }
 }
 
 @media (max-width: 465px) {
@@ -546,6 +606,15 @@ footer a {
 
     #main .main__body .body__product .product__items .item a {
         grid-template-rows: 15rem auto;
+    }
+
+    #main .main__foot .foot-title {
+        font-size: 1.6rem;
+    }
+
+    #main .main__foot .foot-elements {
+        padding: auto;
+        font-size: 1.4rem;
     }
 
 }
