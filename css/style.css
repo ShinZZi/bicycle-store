@@ -11,7 +11,7 @@
 :root {
     --main: #191919;
     --white: #fff;
-    --gray: #8C8C8C;
+    --gray: #5E5E5E;
 }
 
 /* width */
@@ -127,10 +127,8 @@ header .header__nav .nav__links>li:hover {
 #main .menu__fixed {
     position: fixed;
     opacity: 0;
-    bottom: 3rem;
-    right: 5rem;
-    height: 15rem;
-    width: 15rem;
+    bottom: 10%;
+    right: 2%;
     z-index: 99999;
     transition: opacity .3s ease;
     -webkit-transition: opacity .3s ease;
@@ -140,10 +138,18 @@ header .header__nav .nav__links>li:hover {
 }
 
 #main .menu__fixed .product {
-    height: 10rem;
-    width: 10rem;
-    background: red;
-    /* z-index: 9999; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    width: 4rem;
+    color: var(--white);
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
 }
 
 #main .main__head {
@@ -302,7 +308,7 @@ header .header__nav .nav__links>li:hover {
     padding: 1rem;
     height: 100%;
     width: 40rem;
-    box-shadow: .1rem .1rem 1rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0rem 0rem 1rem .3rem rgba(0, 0, 0, 0.1);
     transition: transform .1s ease-in-out;
     -webkit-transition: transform .1s ease-in-out;
     -moz-transition: transform .1s ease-in-out;
@@ -316,7 +322,6 @@ header .header__nav .nav__links>li:hover {
 }
 
 #main .main__body .body__product .product__items .item:hover {
-    box-shadow: .1rem .2rem 1.5rem rgba(0, 0, 0, 0.1);
     transform: translateY(.5rem);
 }
 
@@ -392,12 +397,18 @@ header .header__nav .nav__links>li:hover {
     justify-content: center;
 }
 
+#main .main__body .body__contact .contact__box {
+    -webkit-box-shadow: 9px 7px 20px -8px rgba(0, 0, 0, 0.41);
+    -moz-box-shadow: 9px 7px 20px -8px rgba(0, 0, 0, 0.41);
+    box-shadow: 9px 7px 20px -8px rgba(0, 0, 0, 0.41);
+}
+
 #main .main__body .body__contact .contact__box .box-title p {
     color: var(--gray);
 }
 
 #main .main__body .body__contact .contact__box form {
-    /* height: max-content; */
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -405,40 +416,63 @@ header .header__nav .nav__links>li:hover {
     justify-content: center;
 }
 
-#main .main__body .body__contact .contact__box input,
-#main .main__body .body__contact .contact__box textarea{
-    margin: .3rem;
+#main .main__body .body__contact .contact__box .field {
+    background: rgba(230, 230, 230, 0.6);
+    margin-bottom: 2.2rem;
     width: 75%;
-    border: none;
-    padding: 0 10rem .2rem .8rem;
-    border-bottom: .2rem var(--gray) solid;
+    padding: 0.5rem 1rem;
+    border: 2px solid rgba(0, 0, 0, 0);
     outline: none;
 }
 
-#main .main__body .body__contact .contact__box textarea {
-    margin-top: 2rem;
-    padding-top: .5rem;
-    border: .2rem var(--gray) solid;
-    border-radius: 1rem;
-    -webkit-border-radius: 1rem;
-    -moz-border-radius: 1rem;
-    -ms-border-radius: 1rem;
-    -o-border-radius: 1rem;
+#main .main__body .body__contact .contact__box .field::placeholder {
+    font-size: 1.6rem;
 }
 
-#main .main__body .body__contact .contact__box button {
+#main .main__body .body__contact .contact__box .field:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+#main .main__body .body__contact .contact__box .field:focus {
+    background: var(--white);
+    border: 2px solid rgba(25, 25, 25, 0.47);
+}
+
+#main .main__body .body__contact .contact__box .btn {
+    height: 5rem;
     margin-top: 3rem;
     width: 75%;
+    border: none;
+    background: var(--main);
+    color: var(--white);
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: transform .2s ease;
+    -webkit-transition: transform .2s ease;
+    -moz-transition: transform .2s ease;
+    -ms-transition: transform .2s ease;
+    -o-transition: transform .2s ease;
+}
+
+#main .main__body .body__contact .contact__box .btn:hover {
+    background: #2f2f2f;
+}
+
+#main .main__body .body__contact .contact__box .btn:focus {
+    transform: scale(.8);
+    -webkit-transform: scale(.8);
+    -moz-transform: scale(.8);
+    -ms-transform: scale(.8);
+    -o-transform: scale(.8);
 }
 
 #main .main__body .body__contact .map__embed {
-    background: purple;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#main .main__body .body__contact .map__embed iframe{
+#main .main__body .body__contact .map__embed iframe {
     border: none;
     height: 75%;
     width: 75%;
