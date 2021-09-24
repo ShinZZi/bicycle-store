@@ -160,15 +160,14 @@
                 <!-- Contact Section start  -->
 
                 <div id="contact" class="body__contact">
-
                     <div class="contact__box">
                         <div class="box-title">
                             <p>Contact Us</p>
                         </div>
                         <form action="javascript:void();">
-                            <input class="field" type="text" name="" placeholder="Full Name:" required>
-                            <input class="field" type="text" name="" placeholder="Email:" required>
-                            <input class="field" type="text" name="" placeholder="Subject:" required>
+                            <input class="field" type="text" name="" placeholder="Full Name" required>
+                            <input class="field" type="text" name="" placeholder="Email" required>
+                            <input class="field" type="text" name="" placeholder="Subject" required>
                             <textarea class="field" name="" cols="30" rows="7" style="resize: none;"
                                 placeholder="Message"></textarea>
                             <button class="btn">Send</button>
@@ -242,7 +241,7 @@
 
         document.addEventListener('scroll', () => {
             let menu__fixed = document.querySelector('.menu__fixed');
-            if (window.pageYOffset >= 100) {
+            if (window.pageYOffset >= 95) {
                 menu__fixed.style.opacity = 1;
             } else {
                 menu__fixed.style.opacity = 0;

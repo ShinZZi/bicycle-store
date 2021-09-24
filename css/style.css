@@ -366,7 +366,7 @@ header .header__nav .nav__links>li:hover {
 #main .main__body .body__contact .contact__box {
     border: .2rem var(--gray) solid;
     position: relative;
-    height: 80%;
+    height: 85%;
     width: 80%;
     margin: auto;
     border-radius: 1rem;
@@ -374,6 +374,9 @@ header .header__nav .nav__links>li:hover {
     -moz-border-radius: 1rem;
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
+    -webkit-box-shadow: 9px 7px 20px -8px rgba(0, 0, 0, 0.41);
+    -moz-box-shadow: 9px 7px 20px -8px rgba(0, 0, 0, 0.41);
+    box-shadow: 9px 7px 20px -8px rgba(0, 0, 0, 0.41);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -382,25 +385,20 @@ header .header__nav .nav__links>li:hover {
 
 #main .main__body .body__contact .contact__box .box-title {
     position: absolute;
-    width: 50%;
+    width: max-content;
     top: 0;
-    left: 0;
+    left: calc(100% - width);
     background: var(--white);
     font-size: 3rem;
     line-height: 3rem;
-    transform: translate(50%, -50%);
-    -webkit-transform: translate(50%, -50%);
-    -moz-transform: translate(50%, -50%);
-    -ms-transform: translate(50%, -50%);
-    -o-transform: translate(50%, -50%);
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
     display: flex;
     justify-content: center;
-}
-
-#main .main__body .body__contact .contact__box {
-    -webkit-box-shadow: 9px 7px 20px -8px rgba(0, 0, 0, 0.41);
-    -moz-box-shadow: 9px 7px 20px -8px rgba(0, 0, 0, 0.41);
-    box-shadow: 9px 7px 20px -8px rgba(0, 0, 0, 0.41);
+    padding: 0 2rem;
 }
 
 #main .main__body .body__contact .contact__box .box-title p {
@@ -435,7 +433,7 @@ header .header__nav .nav__links>li:hover {
 
 #main .main__body .body__contact .contact__box .field:focus {
     background: var(--white);
-    border: 2px solid rgba(25, 25, 25, 0.47);
+    border: 2px solid var(--gray);
 }
 
 #main .main__body .body__contact .contact__box .btn {
@@ -503,18 +501,6 @@ header .header__nav .nav__links>li:hover {
     margin: .3rem 0;
 }
 
-/* #main .main__foot .foot__about {
-    background: brown;
-}
-
-#main .main__foot .foot__contact {
-    background: gray;
-}
-
-#main .main__foot .foot__social {
-    background: purple;
-} */
-
 footer {
     position: fixed;
     bottom: 0;
@@ -524,7 +510,7 @@ footer {
     grid-area: footer;
     color: var(--white);
     background: var(--main);
-    z-index: 99999;
+    z-index: 9999;
 }
 
 footer a {
@@ -574,17 +560,27 @@ footer a {
     }
 }
 
+@media screen and (max-width: 955px) {
+    #main .main__body .body__contact {
+        min-height: 120rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: 70rem 1fr;
+    }
+
+    #main .main__body .body__contact .map__embed iframe {
+        border: none;
+        height: 100%;
+        width: 75%;
+    }
+}
+
 @media (max-width: 768px) {
     #main .main__foot {
-        /* height: 25rem; */
         padding: 2rem 10% 0 15%;
-        /* grid-template-columns: repeat(3, 1fr); */
-        /* grid-template-rows: 1fr; */
     }
 }
 
 @media (max-width: 615px) {
-
     header {
         width: 100%;
     }
@@ -741,6 +737,37 @@ footer a {
         font-size: 5.5rem;
     }
 
+    #main .main__body .body__contact {
+        min-height: 100rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: 55rem 1fr;
+    }
+
+    #main .main__body .body__contact .contact__box .box-title {
+        font-size: 2.5rem;
+    }
+
+    #main .main__body .body__contact .contact__box .field {
+        margin-bottom: 1.5rem;
+        width: 80%;
+    }
+
+    #main .main__body .body__contact .map__embed iframe {
+        border: none;
+        height: 100%;
+        width: 75%;
+    }
+
+    #main .main__body .body__contact .contact__box .btn {
+        height: 5rem;
+        margin-top: 1.4rem;
+        width: 80%;
+        border: none;
+        background: var(--main);
+        color: var(--white);
+        font-size: 1.6rem;
+    }
+
 }
 
 @media (max-width: 375px) {
@@ -769,6 +796,10 @@ footer a {
     #main .main__foot .foot-elements {
         padding: auto;
         font-size: 1.4rem;
+    }
+
+    #main .main__body .body__contact .contact__box .box-title {
+        font-size: 2.3rem;
     }
 
 }
