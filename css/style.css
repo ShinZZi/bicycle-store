@@ -11,6 +11,7 @@
 :root {
     --main: #191919;
     --white: #fff;
+    --gray: #8C8C8C;
 }
 
 /* width */
@@ -41,7 +42,6 @@ a {
 html {
     scroll-behavior: smooth;
     font-size: 62.5%;
-    /* 1rem = 10px */
 }
 
 body {
@@ -64,6 +64,7 @@ body {
     grid-template-columns: 1fr;
     position: relative;
 }
+
 
 header {
     height: 100%;
@@ -111,16 +112,38 @@ header .header__nav .nav__links>li {
 }
 
 header .header__nav .nav__links>li:hover {
+    transform: scale(1.2);
     -webkit-transform: scale(1.2);
     -moz-transform: scale(1.2);
     -ms-transform: scale(1.2);
     -o-transform: scale(1.2);
-    transform: scale(1.2);
 }
 
 #main {
     position: relative;
     grid-area: main;
+}
+
+#main .menu__fixed {
+    position: fixed;
+    opacity: 0;
+    bottom: 3rem;
+    right: 5rem;
+    height: 15rem;
+    width: 15rem;
+    z-index: 99999;
+    transition: opacity .3s ease;
+    -webkit-transition: opacity .3s ease;
+    -moz-transition: opacity .3s ease;
+    -ms-transition: opacity .3s ease;
+    -o-transition: opacity .3s ease;
+}
+
+#main .menu__fixed .product {
+    height: 10rem;
+    width: 10rem;
+    background: red;
+    /* z-index: 9999; */
 }
 
 #main .main__head {
@@ -155,8 +178,17 @@ header .header__nav .nav__links>li:hover {
     opacity: .85;
 }
 
+#main .main__head .head__text h3 {
+    line-height: 9.8rem;
+}
+
+#main .main__head .head__text p {
+    font-size: 7rem;
+}
+
 #main .main__head .head__text .explore {
     position: relative;
+    margin-top: 3rem;
     max-width: max-content;
     padding: .8rem;
     font-size: 2rem;
@@ -318,15 +350,98 @@ header .header__nav .nav__links>li:hover {
 
 #main .main__body .body__contact {
     grid-area: 'contact';
+    height: 70rem;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 100vh;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: 1fr;
     margin-bottom: 5rem;
-    background: brown;
+    padding-top: 5rem;
 }
 
-#main .main__body .body__contact iframe{
-    
+#main .main__body .body__contact .contact__box {
+    border: .2rem var(--gray) solid;
+    position: relative;
+    height: 80%;
+    width: 80%;
+    margin: auto;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#main .main__body .body__contact .contact__box .box-title {
+    position: absolute;
+    width: 50%;
+    top: 0;
+    left: 0;
+    background: var(--white);
+    font-size: 3rem;
+    line-height: 3rem;
+    transform: translate(50%, -50%);
+    -webkit-transform: translate(50%, -50%);
+    -moz-transform: translate(50%, -50%);
+    -ms-transform: translate(50%, -50%);
+    -o-transform: translate(50%, -50%);
+    display: flex;
+    justify-content: center;
+}
+
+#main .main__body .body__contact .contact__box .box-title p {
+    color: var(--gray);
+}
+
+#main .main__body .body__contact .contact__box form {
+    /* height: max-content; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#main .main__body .body__contact .contact__box input,
+#main .main__body .body__contact .contact__box textarea{
+    margin: .3rem;
+    width: 75%;
+    border: none;
+    padding: 0 10rem .2rem .8rem;
+    border-bottom: .2rem var(--gray) solid;
+    outline: none;
+}
+
+#main .main__body .body__contact .contact__box textarea {
+    margin-top: 2rem;
+    padding-top: .5rem;
+    border: .2rem var(--gray) solid;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+#main .main__body .body__contact .contact__box button {
+    margin-top: 3rem;
+    width: 75%;
+}
+
+#main .main__body .body__contact .map__embed {
+    background: purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main .main__body .body__contact .map__embed iframe{
+    border: none;
+    height: 75%;
+    width: 75%;
 }
 
 #main .main__foot {

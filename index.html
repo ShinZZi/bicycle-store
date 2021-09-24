@@ -39,6 +39,7 @@
 
 <body>
     <div class="grid-container">
+
         <header id="header" class="row flex-btw">
             <div class="header__logo">
                 <a href="#">
@@ -61,7 +62,9 @@
 
         <section id="main">
             <!-- Banner Section start -->
-
+            <div class="menu__fixed">
+                <div class="product"></div>
+            </div>
             <div class="main__head">
                 <video class="head__video" src="./img/banner.mp4" muted loop autoplay></video>
                 <div class="head__overlay"></div>
@@ -155,10 +158,27 @@
                 <!-- Contact Section start  -->
 
                 <div id="contact" class="body__contact">
-                    <h1 class="title black row center">Contact</h1>
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15672.881627197376!2d106.80545878912557!3d10.870833839666012!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527587e9ad5bf%3A0xafa66f9c8be3c91!2sUniversity%20of%20Information%20Technology%20VNU-HCM!5e0!3m2!1sen!2s!4v1632333969290!5m2!1sen!2s"
-                        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <!-- <h1 class="title black row center">Contact</h1> -->
+                    <div class="contact__box">
+                        <div class="box-title">
+                            <p>Contact Us</p>
+                        </div>
+                        <form action="javascript:void();">
+                            <input type="text" name="" placeholder="Full Name:">
+                            <input type="text" name="" placeholder="Email:">
+                            <input type="text" name="" placeholder="Subject:">
+                            <textarea name="" cols="30" rows="7" style="resize: none;" placeholder="Message"></textarea>
+                            <button>Send</button>
+                        
+                        </form>
+                    </div>
+                    <div class="map__embed">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15672.881627197376!2d106.80545878912557!3d10.870833839666012!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527587e9ad5bf%3A0xafa66f9c8be3c91!2sUniversity%20of%20Information%20Technology%20VNU-HCM!5e0!3m2!1sen!2s!4v1632333969290!5m2!1sen!2s"
+                            allowfullscreen="" loading="lazy">
+                        </iframe>
+                    </div>
+
                 </div>
 
                 <!-- Contact Section end -->
@@ -215,10 +235,16 @@
     <script src="./javascript/script.js"></script>
     <script>
         const heightt = document.querySelector('#contact');
-        //console.log(heightt.scrollHeight);
+        console.log(heightt.scrollHeight);
 
-        document.addEventListener('', () => {
-            console.log(window.pageYOffset);
+        document.addEventListener('scroll', () => {
+            let menu__fixed = document.querySelector('.menu__fixed');
+            if (window.pageYOffset >= 100) {
+                menu__fixed.style.opacity = 1;
+            } else {
+                menu__fixed.style.opacity = 0;
+            }
+            // console.log(window.pageYOffset);
         })
     </script>
 </body>
