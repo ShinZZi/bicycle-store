@@ -9,10 +9,26 @@ nav__menus.addEventListener('click', () => {
         menus[1].classList.add('active');
         nav__links.classList.add('active');
         menus[0].classList.remove('active');
-    }
-    else {
+    } else {
         menus[0].classList.add('active');
         nav__links.classList.remove('active');
         menus[1].classList.remove('active');
     }
 })
+
+
+const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+
+    pagination: {
+        el: '.swiper-pagination',
+    },
+
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    }
+});
