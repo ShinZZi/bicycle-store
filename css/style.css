@@ -250,7 +250,6 @@ header .header__nav .nav__links>li:hover {
     display: grid;
     grid-template-areas:
         'product'
-        'about'
         'contact';
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -356,6 +355,7 @@ header .header__nav .nav__links>li:hover {
     height: 50rem;
 }
 
+
 #main .main__body .body__contact {
     grid-area: 'contact';
     height: 70rem;
@@ -363,7 +363,7 @@ header .header__nav .nav__links>li:hover {
     grid-template-columns: repeat(2, 50%);
     grid-template-rows: 1fr;
     margin-bottom: 5rem;
-    padding-top: 5rem;
+    padding-top: 3rem;
 }
 
 #main .main__body .body__contact .contact__box {
